@@ -1,15 +1,15 @@
 import styled from 'styled-components'
-import { values, theme } from '../../lib/mixins'
 import TextareaAutosize from 'react-textarea-autosize'
+import { values, theme } from '../../lib/mixins'
 
 export const Base = styled.div`
   border: 1px solid
     ${values([
-      ['error', 'focus', 'error'],
-      ['error', 'error'],
-      ['focus', 'primary'],
-      'border',
-    ])};
+    ['error', 'focus', 'error'],
+    ['error', 'error'],
+    ['focus', 'primary'],
+    'border',
+  ])};
   border-radius: 3px;
   min-height: 45px;
   position: relative;
@@ -30,8 +30,7 @@ export const Input = styled(TextareaAutosize)`
   padding: 0 10px;
   resize: none;
   min-height: 45px;
-  padding-top: ${({ focus, active, label }) =>
-    (focus || active) && label ? '19px' : '10px'};
+  padding-top: ${({ focus, active, label }) => ((focus || active) && label ? '19px' : '10px')};
   padding-bottom: ${({ label }) => (label ? '5px' : '10px')};
 `
 

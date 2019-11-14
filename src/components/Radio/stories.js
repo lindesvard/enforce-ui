@@ -1,5 +1,5 @@
 import React from 'react'
-import Radio from './'
+import Radio from '.'
 import Label from '../Label'
 import useForm from '../../hooks/useForm'
 

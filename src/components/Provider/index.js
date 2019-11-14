@@ -1,22 +1,22 @@
-import React, { memo } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components'
-import { IconContext } from "react-icons";
+import { IconContext } from 'react-icons'
 import defaultTheme from '../../lib/theme'
 
-const ProviderComponent = ({ children, mode }) => {
-  console.log('mode', mode);
-  return (
-    <ThemeProvider theme={{ mode, ...defaultTheme }}>
-      <IconContext.Provider value={{ style: { verticalAlign: 'middle' }, className: 'icon' }}>
-        {children}
-      </IconContext.Provider>
-    </ThemeProvider>
-  );
-};
+const iconStyles = { style: { verticalAlign: 'middle' }, className: 'icon' }
+
+const ProviderComponent = ({ children, mode = 'light' }) => (
+  <ThemeProvider theme={{ mode, ...defaultTheme }}>
+    <IconContext.Provider value={iconStyles}>
+      {children}
+    </IconContext.Provider>
+  </ThemeProvider>
+)
 
 ProviderComponent.propTypes = {
   children: PropTypes.node,
-};
+  mode: PropTypes.string,
+}
 
-export default ProviderComponent;
+export default ProviderComponent

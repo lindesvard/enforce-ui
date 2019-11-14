@@ -7,12 +7,16 @@ export default function useFocus({ value, onBlur, onFocus }) {
   return {
     focus,
     active,
-    onFocus: event => {
-      onFocus && onFocus(event)
+    onFocus: (event) => {
+      if (onFocus) {
+        onFocus(event)
+      }
       setFocus(true)
     },
-    onBlur: event => {
-      onBlur && onBlur(event)
+    onBlur: (event) => {
+      if (onBlur) {
+        onBlur(event)
+      }
       setFocus(false)
     },
   }

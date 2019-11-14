@@ -34,14 +34,14 @@ export const Base = styled.button`
   position: relative;
   overflow: hidden;
 
-  &:hover {
-    transform: translate3d(0, -1px, 0);
+  &:hover {
+    transform: translate3d(0, -2px, 0);
     background: ${values([
-      ['error', 'error|90'],
-      ['warning', 'warning|90'],
-      ['success', 'success|90'],
-      ['info', 'primary|90'],
-      'default|90',
-    ])};
+    ['error', 'error|90'],
+    ['warning', 'warning|90'],
+    ['success', 'success|90'],
+    ['info', 'primary|90'],
+    'default|90',
+  ])};
   }
 `

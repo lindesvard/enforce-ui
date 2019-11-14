@@ -1,17 +1,18 @@
-import React, { memo, useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Base, Label, Input } from './styled'
 import useFocus from '../../hooks/useFocus'
 
-const TextareaComponent = props => {
-  const { label, error } = props
-  const { focus, active, onFocus, onBlur } = useFocus(props)
+const TextareaComponent = ({ label, error, ...props }) => {
+  const {
+    focus, active, onFocus, onBlur,
+  } = useFocus(props)
 
   return (
     <Base active={active} focus={focus} error={error}>
       {label && (
         <Label active={active} focus={focus} error={error}>
-          {error ? error : label}
+          {error || label}
         </Label>
       )}
       <Input
@@ -27,7 +28,8 @@ const TextareaComponent = props => {
 }
 
 TextareaComponent.propTypes = {
-  children: PropTypes.node,
+  label: PropTypes.string,
+  error: PropTypes.bool,
 }
 
 export default TextareaComponent

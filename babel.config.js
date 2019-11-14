@@ -1,21 +1,21 @@
-module.exports = function(api) {
-  api.cache(true);
+module.exports = function (api) {
+  api.cache(true)
 
-  const modules = process.env.BABEL_ENV === "es6" ? false : "commonjs";
+  const modules = process.env.BABEL_ENV === 'es6' ? false : 'commonjs'
 
   return {
     presets: [
       [
-        "@babel/preset-env",
+        '@babel/preset-env',
         {
           loose: true,
-          modules
-        }
+          modules,
+        },
       ],
-      "@babel/preset-react"
+      '@babel/preset-react',
     ],
     plugins: [
-      ["styled-components", { "useDisplayName": false, "ssr": true }]
-    ]
-  };
-};
+      ['styled-components', { ssr: true }],
+    ],
+  }
+}

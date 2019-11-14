@@ -7,9 +7,11 @@ import { theme } from '../../lib/mixins'
 // - Heading (18, 22, 24)
 // - Text (10, 12, 14, 16, 18)
 
-const getSize = (sizes) => ({ xsmall, small, large, xlarge }) => {
+const getSize = (sizes) => ({
+  xsmall, small, large, xlarge,
+}) => {
   if (xsmall) {
-    return sizes.xsmall || sizes.small
+    return sizes.xsmall || sizes.small
   }
 
   if (small) {
@@ -21,23 +23,27 @@ const getSize = (sizes) => ({ xsmall, small, large, xlarge }) => {
   }
 
   if (xlarge) {
-    return sizes.xlarge || sizes.large
+    return sizes.xlarge || sizes.large
   }
 
   return sizes.default
 }
 
 const getFontSize = (type) => (props) => {
-  switch(type) {
+  switch (type) {
     case 'text': {
-      const fontSize = getSize({ xsmall: 10, small: 12, default: 14, large: 16, xlarge: 18 })(props)
+      const fontSize = getSize({
+        xsmall: 10, small: 12, default: 14, large: 16, xlarge: 18,
+      })(props)
       return css`
         font-size: ${fontSize}px;
         line-height: ${fontSize + 2}px;
       `
     }
     case 'heading': {
-      const fontSize = getSize({ xsmall: 16, small: 18, default: 22, large: 24 })(props)
+      const fontSize = getSize({
+        xsmall: 16, small: 18, default: 22, large: 24,
+      })(props)
       return css`
         font-size: ${fontSize}px;
         line-height: ${fontSize + 2}px;
@@ -69,7 +75,9 @@ const getFontWeight = ({ bold, medium, thin }) => {
   return 400
 }
 
-const getColor = ({ meta, light, color, white, ...props }) => {
+const getColor = ({
+  meta, light, color, white, ...props
+}) => {
   if (color) {
     return color
   }
@@ -91,14 +99,14 @@ export const Text = styled.p`
   ${getFontSize('text')};
   font-weight: ${getFontWeight};
   color: ${getColor};
-  margin: ${props => props.paragraph ? '5px' : 0} 0;
+  margin: ${(props) => (props.paragraph ? '5px' : 0)} 0;
   ${space};
 `
 
-export const Heading = styled((props) => <Text {...props} thin={false} medium={false} bold={true} paragraph={false} />)`
+export const Heading = styled((props) => <Text {...props} thin={false} medium={false} bold paragraph={false} />)`
   ${getFontSize('heading')};
 `
 
-export const Display = styled((props) => <Text {...props} thin={false} medium={false} bold={true} paragraph={false} />)`
+export const Display = styled((props) => <Text {...props} thin={false} medium={false} bold paragraph={false} />)`
   ${getFontSize('display')};
 `

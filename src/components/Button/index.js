@@ -1,23 +1,39 @@
-import React from 'react';
-import { Base } from './styled';
-import { Flex } from '../Structure';
-import Overlay from '../Overlay';
-import Loading from '../Loading';
-import { Text } from '../Typography';
-import useTheme from '../../hooks/useTheme';
+import React from 'react'
+import { Base } from './styled'
+import { Flex } from '../Structure'
+import Overlay from '../Overlay'
+import Loading from '../Loading'
+import { Text } from '../Typography'
+import useTheme from '../../hooks/useTheme'
 
 const ButtonComponent = ({
-  children, leftIcon: LeftIcon, rightIcon: RightIcon, loading,  disabled, large, small, error, info, warning, success,
+  children,
+  leftIcon: LeftIcon,
+  rightIcon: RightIcon,
+  loading,
+  disabled,
+  large,
+  small,
+  error,
+  info,
+  warning,
+  success,
+  ...props
 }) => {
-  const props = {
-    error, info, success, warning, large, small,
-  };
-  const iconColor = useTheme('colors.icon');
+  const variants = {
+    error,
+    info,
+    success,
+    warning,
+    large,
+    small,
+  }
+  const iconColor = useTheme('colors.icon')
   return (
-    <Base {...props} disabled={loading || disabled}>
+    <Base {...variants} {...props} disabled={loading || disabled}>
       {loading && (
         <Overlay>
-          <Loading />
+          <Loading ignoreTheme />
         </Overlay>
       )}
       {Boolean(LeftIcon) && (
@@ -34,9 +50,9 @@ const ButtonComponent = ({
         </Flex>
       )}
     </Base>
-  );
-};
+  )
+}
 
-ButtonComponent.propTypes = {};
+ButtonComponent.propTypes = {}
 
-export default ButtonComponent;
+export default ButtonComponent

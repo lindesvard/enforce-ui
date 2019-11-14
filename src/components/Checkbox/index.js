@@ -1,15 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { FiCheck } from 'react-icons/fi'
 import {
   CheckboxContainer,
   HiddenCheckbox,
   StyledCheckbox,
-  Icon,
   Title,
 } from './styled'
-import { FiCheck } from 'react-icons/fi'
 
-const CheckboxComponent = props => {
+const CheckboxComponent = (props) => {
   const { label, checked } = props
 
   return (

@@ -1,12 +1,16 @@
-import React, { memo } from 'react';
-import { Base } from './styled';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Base } from './styled'
 
 const RotateComponent = ({ children, disabled, ...props }) => (
-    <Base {...props} disabled={disabled}>
-      {children}
-    </Base>
-  );
+  <Base {...props} disabled={disabled}>
+    {children}
+  </Base>
+)
 
-RotateComponent.propTypes = {};
+RotateComponent.propTypes = {
+  children: PropTypes.node,
+  disabled: PropTypes.bool,
+}
 
-export default RotateComponent;
+export default RotateComponent

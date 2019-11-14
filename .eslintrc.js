@@ -29,6 +29,10 @@ module.exports = {
     "semi": ["error", "never"],
     "import/prefer-default-export": 0,
     "no-restricted-syntax": 0,
-    "guard-for-in": 0
+    "guard-for-in": 0,
+    "react/no-array-index-key": 0,
+    "react/forbid-prop-types": 0,
+    "no-underscore-dangle": 0,
+    "default-case": 0,
   },
 };

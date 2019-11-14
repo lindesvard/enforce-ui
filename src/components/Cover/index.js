@@ -1,22 +1,30 @@
-import React, { memo, useState } from 'react';
-import PropTypes from 'prop-types';
-import { Base, Inner, Image } from './styled';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Base, Inner, Image } from './styled'
 
-const CoverComponent = (props) => {
-  const { src, width, height } = props;
-  const ratio = (props.ratio || height / width) * 100;
+const getRatio = ({ ratio, width, height }) => (ratio || height / width) * 100
 
-  return (
-    <Base ratio={ratio} maxWidth={width}>
-      <Inner {...props}>
-        <Image src={src} />
-      </Inner>
-    </Base>
-  );
-};
+const CoverComponent = ({
+  borderRadius = 10,
+  src,
+  width,
+  height,
+  ratio,
+  ...props
+}) => (
+  <Base ratio={getRatio({ ratio, width, height })} maxWidth={width}>
+    <Inner {...props}>
+      <Image src={src} borderRadius={borderRadius} />
+    </Inner>
+  </Base>
+)
 
 CoverComponent.propTypes = {
   src: PropTypes.string,
-};
+  width: PropTypes.number,
+  height: PropTypes.number,
+  ratio: PropTypes.number,
+  borderRadius: PropTypes.number,
+}
 
-export default CoverComponent;
+export default CoverComponent

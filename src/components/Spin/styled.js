@@ -1,9 +1,9 @@
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 
 export const Base = styled.div`
   animation: spin 2.5s infinite linear;
   display: inline-flex;
-  animation-play-state: ${props => props.disabled ? 'paused' : 'running'};
+  animation-play-state: ${(props) => (props.disabled ? 'paused' : 'running')};
   
   @keyframes spin {
     0% {

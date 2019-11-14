@@ -1,28 +1,20 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 import { theme } from '../../lib/mixins'
 
-const getSize = ({ xsmall, small, large, xlarge }) => {
-  if (xsmall) {
+const getSize = ({ small, large }) => {
+  if (small) {
     return 5
   }
 
-  if (small) {
-    return 10
-  }
-
   if (large) {
-    return 30
+    return 15
   }
 
-  if (xlarge) {
-    return 60
-  }
-
-  return 15
+  return 10
 }
 
 export const Base = styled.div`
-  padding: 10px ${props => props.mr || 0}px 10px ${props => props.ml || 0}px;
+  padding: ${getSize}px ${(props) => props.mr || 0}px ${getSize}px ${(props) => props.ml || 0}px;
   width: 100%;
 `
 

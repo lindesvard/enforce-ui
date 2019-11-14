@@ -1,8 +1,9 @@
 import React, { useCallback } from 'react'
-import Select from './'
+import debounce from 'debounce-promise'
+import Select from '.'
 import Label from '../Label'
 import useForm from '../../hooks/useForm'
-import debounce from 'debounce-promise'
+
 export default {
   title: 'Select',
 }
@@ -33,17 +34,19 @@ export const WithError = () => {
 }
 
 export const WithAdvanced = () => {
-  const { field, setFieldValue, values: {options} } = useForm({ name: '', options: [] })
+  const { field, setFieldValue, values: { options } } = useForm({ name: '', options: [] })
 
   const handleSearch = useCallback(debounce(async (query) => {
     const url = `https://jsonplaceholder.typicode.com/users?q=${query}`
-    
+
     const response = await fetch(url)
     const body = await response.json()
     setFieldValue('options', body)
   }, 100), [])
 
-  return <div>
-    <Select label="Your first name" error="Some error" advanced onSearch={handleSearch} options={options.map(({ id, username }) => ({ id, label: username }))} {...field('name')} />
-  </div>
+  return (
+    <div>
+      <Select label="Your first name" error="Some error" advanced onSearch={handleSearch} options={options.map(({ id, username }) => ({ id, label: username }))} {...field('name')} />
+    </div>
+  )
 }

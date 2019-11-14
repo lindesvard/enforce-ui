@@ -1,5 +1,5 @@
 import React from 'react'
-import Input from './'
+import Input from '.'
 import Label from '../Label'
 import useForm from '../../hooks/useForm'
 

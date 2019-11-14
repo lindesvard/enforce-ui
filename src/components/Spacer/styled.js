@@ -1,6 +1,8 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-const getSize = ({ xsmall, small, large, xlarge }) => {
+const getSize = ({
+  xsmall, small, large, xlarge,
+}) => {
   if (xsmall) {
     return 5
   }

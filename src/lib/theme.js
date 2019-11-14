@@ -1,7 +1,16 @@
 import { css } from 'styled-components'
 
+const breakpoints = ['450px', '769px', '992px', '1200px']
+
+/* eslint-disable prefer-destructuring */
+breakpoints.sm = breakpoints[1]
+breakpoints.md = breakpoints[2]
+breakpoints.lg = breakpoints[3]
+
 export default {
   theme: 'light',
+  space: [0, 2.5, 5, 10, 15, 20, 30, 40, 50],
+  breakpoints,
   colors: {
     grey_1: { light: '#333', dark: '#333' },
     grey_2: { light: '#555', dark: '#555' },
@@ -45,5 +54,13 @@ export default {
     boxShadow: css`
       box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
     `,
+    borderRadius: {
+      small: css`
+        border-radius: 3px;
+      `,
+      large: css`
+        border-radius: 10px;
+      `,
+    },
   },
 }

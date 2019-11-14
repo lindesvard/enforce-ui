@@ -1,16 +1,16 @@
 import styled from 'styled-components'
-import { values, theme } from '../../lib/mixins'
 import TextareaAutosize from 'react-textarea-autosize'
+import { values, theme } from '../../lib/mixins'
 
 export const Base = styled.div`
   border: 1px solid
     ${values([
-      ['!border', 'transparent'],
-      ['error', 'focus', 'error'],
-      ['error', 'error'],
-      ['focus', 'primary'],
-      'border',
-    ])};
+    ['!border', 'transparent'],
+    ['error', 'focus', 'error'],
+    ['error', 'error'],
+    ['focus', 'primary'],
+    'border',
+  ])};
   border-radius: 3px;
   height: 45px;
   position: relative;

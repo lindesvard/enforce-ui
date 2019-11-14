@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { configure, addDecorator } from '@storybook/react';
 import addons from '@storybook/addons';
 import Provider from '../src/components/Provider'
+import Reset from '../src/components/Reset'
 
 const channel = addons.getChannel();
 
@@ -17,6 +18,7 @@ addDecorator((storyFn) => {
   
   return (
     <Provider mode={isDark ? 'dark' : 'light'}>
+      <Reset />
       {storyFn()}
     </Provider>
   )

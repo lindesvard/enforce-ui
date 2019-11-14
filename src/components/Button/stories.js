@@ -1,51 +1,34 @@
-import React, { useState } from 'react'
-import Button from './'
-import {FiUser} from 'react-icons/fi'
+import React from 'react'
+import { action } from '@storybook/addon-actions'
+import { FiUser } from 'react-icons/fi'
+import Button from '.'
 
 export default {
   title: 'Button',
 }
 
-export const Default = () => {
-  return <Button>Button</Button>
+const props = {
+  onClick: action('onClick'),
 }
 
-export const Warning = () => {
-  return <Button warning>Button</Button>
-}
+export const Default = () => <Button {...props}>Button</Button>
 
-export const Error = () => {
-  return <Button error >Button</Button>
-}
+export const Warning = () => <Button {...props} warning>Button</Button>
 
-export const Success = () => {
-  return <Button success >Button</Button>
-}
+export const Error = () => <Button {...props} error>Button</Button>
 
-export const Info = () => {
-  return <Button info >Button</Button>
-}
+export const Success = () => <Button {...props} success>Button</Button>
 
-export const Small = () => {
-  return <Button small>Button</Button>
-}
+export const Info = () => <Button {...props} info>Button</Button>
 
-export const Large = () => {
-  return <Button large>Button</Button>
-}
+export const Small = () => <Button {...props} small>Button</Button>
 
-export const LeftIcon = () => {
-  return <Button leftIcon={FiUser}>Button</Button>
-}
+export const Large = () => <Button {...props} large>Button</Button>
 
-export const RightIcon = () => {
-  return <Button rightIcon={FiUser}>Button</Button>
-}
+export const LeftIcon = () => <Button {...props} leftIcon={FiUser}>Button</Button>
 
-export const Loading = () => {
-  return <Button loading>Button</Button>
-}
+export const RightIcon = () => <Button {...props} rightIcon={FiUser}>Button</Button>
 
-export const LoadingSuccess = () => {
-  return <Button success loading>Button</Button>
-}
+export const Loading = () => <Button {...props} loading>Button</Button>
+
+export const LoadingSuccess = () => <Button {...props} success loading>Button</Button>

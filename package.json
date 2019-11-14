@@ -13,6 +13,7 @@
     "styled-components": ">= 4.x"
   },
   "dependencies": {
+    "@storybook/storybook-deployer": "^2.8.1",
     "debounce-promise": "^3.1.2",
     "prop-types": "^15.7.2",
     "rambda": "^4.1.0",
@@ -53,6 +54,7 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages",
     "webpack": "webpack --mode production",
     "build": "rm -rf dist && webpack --mode production && babel ./src/ --ignore '__tests__' --out-dir ./dist --copy-files && cross-env BABEL_ENV=es6 babel ./src/ --ignore '__tests__' --out-dir ./dist/es6 --copy-files",
     "release": "release-it",

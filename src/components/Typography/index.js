@@ -8,8 +8,12 @@ import { theme } from '../../lib/mixins'
 // - Text (10, 12, 14, 16, 18)
 
 const getSize = (sizes) => ({
-  xsmall, small, large, xlarge,
+  xsmall, small, large, xlarge, size,
 }) => {
+  if (size) {
+    return size
+  }
+
   if (xsmall) {
     return sizes.xsmall || sizes.small
   }
@@ -57,6 +61,8 @@ const getFontSize = (type) => (props) => {
       `
     }
   }
+
+  return css``
 }
 
 const getFontWeight = ({ bold, medium, thin }) => {
@@ -105,8 +111,10 @@ export const Text = styled.p`
 
 export const Heading = styled((props) => <Text {...props} thin={false} medium={false} bold paragraph={false} />)`
   ${getFontSize('heading')};
+  color: #000;
 `
 
 export const Display = styled((props) => <Text {...props} thin={false} medium={false} bold paragraph={false} />)`
   ${getFontSize('display')};
+  color: #000;
 `

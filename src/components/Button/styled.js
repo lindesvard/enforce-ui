@@ -33,6 +33,7 @@ export const Base = styled.button`
   transition: transform .2s ease-in-out, background .2s ease-in-out;
   position: relative;
   overflow: hidden;
+  text-align: center;
 
   &:hover {
     transform: translate3d(0, -2px, 0);

@@ -13,10 +13,11 @@
     "styled-components": ">= 4.x"
   },
   "dependencies": {
-    "@storybook/storybook-deployer": "^2.8.1",
     "debounce-promise": "^3.1.2",
     "prop-types": "^15.7.2",
     "rambda": "^4.1.0",
+    "react": "16.11.0",
+    "react-dom": "16.11.0",
     "react-icons": "3.6.0",
     "react-textarea-autosize": "^7.1.2",
     "styled-components": "^5.0.0-rc.2",
@@ -36,6 +37,7 @@
     "@storybook/addon-viewport": "^5.2.6",
     "@storybook/addons": "^5.2.6",
     "@storybook/react": "^5.2.6",
+    "@storybook/storybook-deployer": "^2.8.1",
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.6",
     "concurrently": "^5.0.0",
@@ -57,6 +59,7 @@
     "deploy-storybook": "storybook-to-ghpages",
     "webpack": "webpack --mode production",
     "build": "rm -rf dist && webpack --mode production && babel ./src/ --ignore '__tests__' --out-dir ./dist --copy-files && cross-env BABEL_ENV=es6 babel ./src/ --ignore '__tests__' --out-dir ./dist/es6 --copy-files",
+    "build:watch": "rm -rf dist && webpack --mode production && babel ./src/ --ignore '__tests__' --out-dir ./dist --copy-files --watch",
     "release": "release-it",
     "lint": "eslint src/**/*.js"
   },

@@ -17,11 +17,11 @@ const ListItem = (props) => {
     <Base>
       {Boolean(image) && (
         <Column mr={3}>
-          <Cover src={image} width={50} height={50} />
+          <Cover src={image} width={45} height={45} />
         </Column>
       )}
-      <Column flex={1}>
-        <Heading xsmall>{title}</Heading>
+      <Column flex={1} justifyContent="center">
+        <Text bold>{title}</Text>
         {showDescription && (
           <Row mt={1}>
             {description && <Text light>{description}</Text>}

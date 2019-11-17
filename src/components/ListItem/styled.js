@@ -4,7 +4,6 @@ import { theme } from '../../lib/mixins'
 
 export const Base = styled(Row)`
   ${theme('css.borderRadius.large')};
-  align-items: center;
   min-height: 45px;
   padding: 5px;
   transition: background .2s ease-in-out;

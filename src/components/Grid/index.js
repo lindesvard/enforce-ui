@@ -5,10 +5,11 @@ import { Flex } from '../Structure'
 
 const breakpoints = ['xs', 'sm', 'md', 'lg']
 
-const defaults = (obj) => {
+const defaults = (obj = {}) => {
   if (typeof obj === 'number') {
     return obj
   }
+
   if (Array.isArray(obj)) {
     return obj
   }
@@ -26,15 +27,21 @@ Container.defaultProps = {
   mx: 'auto',
 }
 
-const Column = ({ width, ...props }) => (
-  <Flex {...props} width={defaults(width)} flex={width && '1 1 auto'} px={15} />
-)
+const Column = ({ width, ...props }) => {
+  if (!width) {
+    return <Flex {...props} flex={1} px={15} flexDirection="column" />
+  }
+
+  return (
+    <Flex {...props} width={defaults(width)} flex="0 1 auto" px={15} flexDirection="column" />
+  )
+}
 
 Column.propTypes = {
   width: PropTypes.any,
 }
 
-const Row = (props) => <Flex flexWrap="wrap" {...props} mx={-15} flex={1} />
+const Row = (props) => <Flex flexWrap="wrap" {...props} mx={-15} flex={1} flexDirection="row" />
 const Main = (props) => <Column width={{ sm: 2 / 3, md: 2 / 3, lg: 2 / 3 }} {...props} />
 const Sidebar = (props) => <Column width={{ sm: 1 / 3, md: 1 / 3, lg: 1 / 3 }} {...props} />
 

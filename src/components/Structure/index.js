@@ -34,9 +34,11 @@ export const Flex = styled.div`
 `
 
 export const Row = styled(Flex)`
+  display: flex;
   flex-direction: row;
 `
 
 export const Column = styled(Flex)`
+  display: flex;
   flex-direction: column;
 `

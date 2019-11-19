@@ -13,6 +13,7 @@ import {
   order,
   alignSelf,
   borderRadius,
+  layout,
 } from 'styled-system'
 
 export const Flex = styled.div`
@@ -29,7 +30,7 @@ export const Flex = styled.div`
   ${order};
   ${alignSelf};
   ${borderRadius};
-  display: flex;
+  ${layout};
 `
 
 export const Row = styled(Flex)`

@@ -25,4 +25,5 @@ const getSize = ({
 export const Base = styled.div`
   height: ${getSize}px;
   width: ${getSize}px;
+  flex: 0 0 ${getSize}px;
 `

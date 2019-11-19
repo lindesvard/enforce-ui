@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Cover from '../Cover'
 import Author from '../Author'
-import { Heading, Text } from '../Typography'
+import { Text } from '../Typography'
 import { Row, Column } from '../Structure'
 import { Base } from './styled'
 

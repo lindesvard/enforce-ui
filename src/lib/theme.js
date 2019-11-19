@@ -2,11 +2,6 @@ import { css } from 'styled-components'
 
 const breakpoints = ['450px', '769px', '992px', '1200px']
 
-/* eslint-disable prefer-destructuring */
-breakpoints.sm = breakpoints[1]
-breakpoints.md = breakpoints[2]
-breakpoints.lg = breakpoints[3]
-
 export default {
   theme: 'light',
   space: [0, 2.5, 5, 10, 15, 20, 30, 40, 50],

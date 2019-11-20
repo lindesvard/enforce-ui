@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Column } from './components/Structure'
+import { Flex, Row, Column } from './components/Structure'
 import { Text } from './components/Typography'
 import useTheme from './hooks/useTheme'
 import theme from './lib/theme'
@@ -11,9 +11,13 @@ export default {
 const Color = ({ color }) => {
   const bg = useTheme(`colors.${color}`)
   return (
-    <Flex width="100px" height="100px" bg={bg} borderRadius="3px" m="10px" alignItems="center" justifyContent="center">
-      <Text>{bg}</Text>
-    </Flex>
+    <Column m="10px" alignItems="center" width="200px">
+      <Flex width="200px" height="50px" bg={bg} borderRadius="3px" alignItems="center" justifyContent="center" />
+      <Row justifyContent="space-between" width="100%" mt={2}>
+        <Text small>{color}</Text>
+        <Text small>{bg}</Text>
+      </Row>
+    </Column>
   )
 }
 

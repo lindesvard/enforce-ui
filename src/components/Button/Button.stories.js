@@ -1,7 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { FiUser } from 'react-icons/fi'
-import Button from '.'
+import { Button } from "."
 
 export default {
   title: 'Button',

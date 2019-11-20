@@ -1,11 +1,8 @@
-import { path } from 'rambda'
 import { useTheme as useStyledTheme } from 'styled-components'
+import { getValueFromTheme } from '../../lib/mixins'
 
-export default function useTheme(key) {
+export default function useTheme(key, options = {}) {
+  const { ignoreTheme } = options
   const theme = useStyledTheme()
-  if (path(key, theme)[theme.mode]) {
-    return path(key, theme)[theme.mode]
-  }
-
-  return path(key, theme)
+  return getValueFromTheme(key, { theme, ignoreTheme })
 }

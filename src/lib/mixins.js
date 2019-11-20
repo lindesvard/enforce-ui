@@ -1,19 +1,24 @@
 import { path } from 'rambda'
 import tinycolor2 from 'tinycolor2'
 
-const getTheme = (value, props) => {
+export const getValueFromTheme = (key, props) => {
+  const value = path(key, props.theme)
+
   if (typeof value === 'object' && value.toString() === '[object Object]') {
     if (props.ignoreTheme) {
       return value.light
     }
-    return value[props.theme.mode]
+
+    if (value[props.theme.mode]) {
+      return value[props.theme.mode]
+    }
   }
 
   return value
 }
 
 export function theme(key) {
-  return (props) => getTheme(path(key, props.theme), props)
+  return (props) => getValueFromTheme(key, props)
 }
 
 const getColor = (_color, props) => {

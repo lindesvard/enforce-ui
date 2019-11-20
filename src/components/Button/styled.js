@@ -1,16 +1,18 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { theme, values } from '../../lib/mixins'
+
+const getHeight = values([
+  ['large', '50px'],
+  ['small', '25px'],
+  '42px',
+])
 
 export const Base = styled.button`
   ${theme('css.font')};
   ${theme('css.button')};
   ${theme('css.boxShadow')};
   font-weight: 500;
-  height: ${values([
-    ['large', '50px'],
-    ['small', '25px'],
-    '42px',
-  ])};
+  height: ${getHeight};
   padding: ${values([
     ['large', '0 30px'],
     ['small', '0 10px'],
@@ -34,6 +36,15 @@ export const Base = styled.button`
   position: relative;
   overflow: hidden;
   text-align: center;
+
+  ${(props) => props.circle && css`
+    display: flex;
+    width: ${getHeight(props)};
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 100%;
+  `}
 
   &:hover {
     transform: translate3d(0, -2px, 0);

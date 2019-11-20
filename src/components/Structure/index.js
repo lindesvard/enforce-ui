@@ -1,3 +1,5 @@
+import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import {
   space,
@@ -16,7 +18,7 @@ import {
   layout,
 } from 'styled-system'
 
-export const Flex = styled.div`
+export const StyledFlex = styled.div`
   ${space};
   ${color};
   ${width};
@@ -32,6 +34,12 @@ export const Flex = styled.div`
   ${borderRadius};
   ${layout};
 `
+
+export const Flex = ({ display, ...props }) => <StyledFlex {...props} display={display || 'flex'} />
+
+Flex.propTypes = {
+  display: PropTypes.any,
+}
 
 export const Row = styled(Flex)`
   display: flex;

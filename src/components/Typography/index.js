@@ -111,10 +111,10 @@ export const Text = styled.p`
 
 export const Heading = styled((props) => <Text {...props} thin={false} medium={false} bold paragraph={false} />)`
   ${getFontSize('heading')};
-  color: #000;
+  color: ${theme('colors.text_title')};
 `
 
 export const Display = styled((props) => <Text {...props} thin={false} medium={false} bold paragraph={false} />)`
   ${getFontSize('display')};
-  color: #000;
+  color: ${theme('colors.text_title')};
 `

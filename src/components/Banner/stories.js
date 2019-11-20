@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Banner from '.'
-import Button from '../Button'
+import { Button } from '../Button'
 
 export default {
   title: 'Banner',

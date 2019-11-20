@@ -1,3 +1,5 @@
+// Style-components
+export { theme } from './lib/mixins'
 // Hooks
 export { default as useTheme } from './hooks/useTheme'
 export { default as useForm } from './hooks/useForm'
@@ -9,7 +11,7 @@ export { default as Author } from './components/Author'
 export { default as Avatar } from './components/Avatar'
 export { default as Banner } from './components/Banner'
 export { BlockItemOne } from './components/BlockItem'
-export { default as Button } from './components/Button'
+export { Button, ButtonIcon } from './components/Button'
 export { CardOne } from './components/Card'
 export { default as Checkbox } from './components/Checkbox'
 export { default as Cover } from './components/Cover'

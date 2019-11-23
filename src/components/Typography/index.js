@@ -102,12 +102,25 @@ const getColor = ({ meta, light, color, white, ...props }) => {
   return theme('colors.text')(props)
 }
 
+const getTextAlign = ({ right, center }) => {
+  if (right) {
+    return 'right'
+  }
+
+  if (center) {
+    return 'center'
+  }
+
+  return 'left'
+}
+
 export const Text = styled.p`
   ${theme('css.font')};
   ${getFontSize('text')};
   font-weight: ${getFontWeight};
   color: ${getColor};
   margin: ${props => (props.paragraph ? '5px' : 0)} 0;
+  text-align: ${getTextAlign};
   ${space};
 `
 

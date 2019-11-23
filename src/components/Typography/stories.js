@@ -92,3 +92,11 @@ export const _Display = () => (
     <Display large>This is large Display</Display>
   </Column>
 )
+
+export const _TextAlignment = () => (
+  <Column>
+    <Display>Left align</Display>
+    <Display center>Center align</Display>
+    <Display right>Right align</Display>
+  </Column>
+)

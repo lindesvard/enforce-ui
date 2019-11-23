@@ -9,8 +9,8 @@ import useTheme from '../../hooks/useTheme'
 
 const ButtonComponent = ({
   children,
-  LeftIcon,
-  RightIcon,
+  IconLeft,
+  IconRight,
   loading,
   disabled,
   large,
@@ -39,17 +39,17 @@ const ButtonComponent = ({
           <Loading white ignoreTheme />
         </Overlay>
       )}
-      {Boolean(LeftIcon) && (
+      {Boolean(IconLeft) && (
         <Flex mr={2}>
-          <LeftIcon color={iconColor} />
+          <IconLeft color={iconColor} />
         </Flex>
       )}
       <Text white={!light} ignoreTheme>
         {children}
       </Text>
-      {Boolean(RightIcon) && (
+      {Boolean(IconRight) && (
         <Flex ml={2}>
-          <RightIcon color={iconColor} />
+          <IconRight color={iconColor} />
         </Flex>
       )}
     </Base>
@@ -58,8 +58,8 @@ const ButtonComponent = ({
 
 ButtonComponent.propTypes = {
   children: PropTypes.node,
-  LeftIcon: PropTypes.elementType,
-  RightIcon: PropTypes.elementType,
+  IconLeft: PropTypes.elementType,
+  IconRight: PropTypes.elementType,
   loading: PropTypes.bool,
   disabled: PropTypes.bool,
   large: PropTypes.bool,

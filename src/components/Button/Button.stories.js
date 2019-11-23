@@ -56,13 +56,13 @@ export const Large = () => (
 )
 
 export const LeftIcon = () => (
-  <Button {...props} leftIcon={FiUser}>
+  <Button {...props} IconLeft={FiUser}>
     Button
   </Button>
 )
 
 export const RightIcon = () => (
-  <Button {...props} rightIcon={FiUser}>
+  <Button {...props} IconRight={FiUser}>
     Button
   </Button>
 )

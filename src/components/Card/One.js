@@ -15,7 +15,7 @@ const Card = ({ image, title, description, author, date }) => {
         <Cover src={image} borderRadius={0} />
       </Column>
       <Column px={3} py={3}>
-        <Heading xsmall>{title}</Heading>
+        <Heading small>{title}</Heading>
         {description && (
           <Text light mt={1}>
             {description}

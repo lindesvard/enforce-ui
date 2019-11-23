@@ -5,6 +5,7 @@ export const Base = styled.div`
   width: ${props => (props.maxWidth ? `${props.maxWidth}px` : '100%')};
   max-width: ${props => (props.maxWidth ? `${props.maxWidth}px` : '100%')};
   position: relative;
+  border-radius: ${props => props.borderRadius}px;
 
   &:after {
     content: '';

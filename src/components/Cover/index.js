@@ -5,8 +5,13 @@ import { Base, Inner, Image } from './styled'
 const getRatio = ({ ratio, width, height }) => (ratio || height / width) * 100
 
 const CoverComponent = ({ borderRadius = 10, src, width, height, ratio, ...props }) => (
-  <Base ratio={getRatio({ ratio, width, height })} maxWidth={width}>
-    <Inner {...props}>
+  <Base
+    {...props}
+    borderRadius={borderRadius}
+    ratio={getRatio({ ratio, width, height })}
+    maxWidth={width}
+  >
+    <Inner>
       <Image src={src} borderRadius={borderRadius} />
     </Inner>
   </Base>

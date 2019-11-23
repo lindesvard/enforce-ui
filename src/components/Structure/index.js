@@ -16,6 +16,7 @@ import {
   alignSelf,
   borderRadius,
   layout,
+  position,
 } from 'styled-system'
 
 export const StyledFlex = styled.div`
@@ -33,6 +34,7 @@ export const StyledFlex = styled.div`
   ${alignSelf};
   ${borderRadius};
   ${layout};
+  ${position};
 `
 
 export const Flex = ({ display, ...props }) => <StyledFlex {...props} display={display || 'flex'} />

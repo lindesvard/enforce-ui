@@ -5,6 +5,7 @@ import { theme } from '../../lib/mixins'
 export const Base = styled(Column)`
   border: 1px solid ${theme('colors.border')};
   transition: transform 0.2s ease-in-out;
+  border-radius: 3px;
 
   &:hover {
     transform: translate3d(0, -2px, 0);

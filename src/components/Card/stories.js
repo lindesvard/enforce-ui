@@ -1,5 +1,6 @@
 import React from 'react'
-import BlockItemOne from './One'
+import CardOne from './One'
+import CardTwo from './Two'
 
 export default {
   title: 'Card',
@@ -14,8 +15,14 @@ const props = {
   date: '3m ago',
 }
 
-export const BlockItemOneDescription = () => (
+export const _CardOne = () => (
   <div style={{ maxWidth: '300px' }}>
-    <BlockItemOne {...props} />
+    <CardOne {...props} />
+  </div>
+)
+
+export const _CardTwo = () => (
+  <div style={{ maxWidth: '300px' }}>
+    <CardTwo {...props} />
   </div>
 )

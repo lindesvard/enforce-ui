@@ -1,5 +1,16 @@
+import { css } from 'styled-components'
 import { path } from 'rambda'
 import tinycolor2 from 'tinycolor2'
+
+export const truncate = (rows, lineHeight) => css`
+  overflow: hidden !important;
+  max-height: ${lineHeight * rows}px!important;
+  line-height: ${lineHeight}px;
+  text-overflow: ellipsis !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: ${rows}!important;
+  -webkit-box-orient: vertical;
+`
 
 export const getValueFromTheme = (key, props) => {
   const value = path(key, props.theme)

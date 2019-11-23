@@ -15,7 +15,7 @@ const InputComponent = (props) => {
     error,
     border = true,
     loading = false,
-    icon: Icon,
+    Icon,
   } = props
   const {
     focus, active, onFocus, onBlur,
@@ -47,10 +47,10 @@ const InputComponent = (props) => {
 
 InputComponent.propTypes = {
   label: PropTypes.node,
-  error: PropTypes.node,
-  border: PropTypes.node,
+  error: PropTypes.bool,
+  border: PropTypes.bool,
   loading: PropTypes.bool,
-  icon: PropTypes.element,
+  Icon: PropTypes.elementType,
 }
 
 export default InputComponent

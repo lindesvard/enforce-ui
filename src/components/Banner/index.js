@@ -43,7 +43,7 @@ const BannerComponent = ({
 }
 
 BannerComponent.propTypes = {
-  text: PropTypes.bool,
+  text: PropTypes.string,
   error: PropTypes.bool,
   info: PropTypes.bool,
   warning: PropTypes.bool,

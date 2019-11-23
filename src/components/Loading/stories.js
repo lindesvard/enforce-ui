@@ -1,10 +1,8 @@
 import React from 'react'
-import Loading from './'
+import Loading from '.'
 
 export default {
   title: 'Loading',
 }
 
-export const Active = () => {
-  return <Loading />
-}
+export const Active = () => <Loading size={30} />

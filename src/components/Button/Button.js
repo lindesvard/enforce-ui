@@ -19,6 +19,7 @@ const ButtonComponent = ({
   info,
   warning,
   success,
+  light,
   ...props
 }) => {
   const variants = {
@@ -28,8 +29,9 @@ const ButtonComponent = ({
     warning,
     large,
     small,
+    light,
   }
-  const iconColor = useTheme('colors.icon_inverse', { ignoreTheme: true })
+  const iconColor = useTheme(light ? 'colors.icon' : 'colors.icon_inverse', { ignoreTheme: true })
   return (
     <Base {...variants} {...props} disabled={loading || disabled}>
       {loading && (
@@ -42,7 +44,7 @@ const ButtonComponent = ({
           <LeftIcon color={iconColor} />
         </Flex>
       )}
-      <Text white ignoreTheme>
+      <Text white={!light} ignoreTheme>
         {children}
       </Text>
       {Boolean(RightIcon) && (
@@ -55,9 +57,9 @@ const ButtonComponent = ({
 }
 
 ButtonComponent.propTypes = {
-  children: PropTypes.bool,
-  LeftIcon: PropTypes.node,
-  RightIcon: PropTypes.node,
+  children: PropTypes.node,
+  LeftIcon: PropTypes.elementType,
+  RightIcon: PropTypes.elementType,
   loading: PropTypes.bool,
   disabled: PropTypes.bool,
   large: PropTypes.bool,
@@ -66,6 +68,7 @@ ButtonComponent.propTypes = {
   info: PropTypes.bool,
   warning: PropTypes.bool,
   success: PropTypes.bool,
+  light: PropTypes.bool,
 }
 
 export default ButtonComponent

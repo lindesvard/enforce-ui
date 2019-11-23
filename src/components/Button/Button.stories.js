@@ -1,7 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { FiUser } from 'react-icons/fi'
-import { Button } from "."
+import { Button } from '.'
 
 export default {
   title: 'Button',
@@ -20,6 +20,8 @@ export const Error = () => <Button {...props} error>Button</Button>
 export const Success = () => <Button {...props} success>Button</Button>
 
 export const Info = () => <Button {...props} info>Button</Button>
+
+export const Light = () => <Button {...props} light>Button</Button>
 
 export const Small = () => <Button {...props} small>Button</Button>
 

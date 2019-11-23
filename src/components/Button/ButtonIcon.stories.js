@@ -22,13 +22,11 @@ export const Success = () => <ButtonIcon {...props} success>ButtonIcon</ButtonIc
 
 export const Info = () => <ButtonIcon {...props} info>ButtonIcon</ButtonIcon>
 
+export const Light = () => <ButtonIcon {...props} light>ButtonIcon</ButtonIcon>
+
 export const Small = () => <ButtonIcon {...props} small>ButtonIcon</ButtonIcon>
 
 export const Large = () => <ButtonIcon {...props} large>ButtonIcon</ButtonIcon>
-
-export const LeftIcon = () => <ButtonIcon {...props}>ButtonIcon</ButtonIcon>
-
-export const RightIcon = () => <ButtonIcon {...props}>ButtonIcon</ButtonIcon>
 
 export const Loading = () => <ButtonIcon {...props} loading>ButtonIcon</ButtonIcon>
 

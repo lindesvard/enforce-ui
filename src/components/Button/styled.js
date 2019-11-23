@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { space } from 'styled-system'
 import { theme, values } from '../../lib/mixins'
 
 const getHeight = values([
@@ -10,7 +11,7 @@ const getHeight = values([
 export const Base = styled.button`
   ${theme('css.font')};
   ${theme('css.button')};
-  ${theme('css.boxShadow')};
+  
   font-weight: 500;
   height: ${getHeight};
   padding: ${values([
@@ -30,6 +31,7 @@ export const Base = styled.button`
     ['warning', 'warning'],
     ['success', 'success'],
     ['info', 'primary'],
+    ['light', 'transparent'],
     'default',
   ])};
   transition: transform .2s ease-in-out, background .2s ease-in-out;
@@ -46,6 +48,10 @@ export const Base = styled.button`
     border-radius: 100%;
   `}
 
+  ${(props) => (props.light ? css`
+    box-shadow: 0 0 0 1px ${theme('colors.border')};
+  ` : theme('css.boxShadow')(props))}
+
   &:hover {
     transform: translate3d(0, -2px, 0);
     background: ${values([
@@ -53,7 +59,10 @@ export const Base = styled.button`
     ['warning', 'warning|90'],
     ['success', 'success|90'],
     ['info', 'primary|90'],
+    ['light', 'grey_5|90'],
     'default|90',
   ])};
   }
+
+  ${space};
 `

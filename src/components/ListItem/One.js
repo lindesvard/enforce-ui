@@ -42,7 +42,7 @@ ListItem.propTypes = {
   image: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
-  RightIcon: PropTypes.element,
+  RightIcon: PropTypes.elementType,
   author: PropTypes.shape({
     name: PropTypes.string,
     image: PropTypes.string,

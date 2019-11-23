@@ -15,6 +15,7 @@ const ButtonIconComponent = ({
   info,
   warning,
   success,
+  light,
   ...props
 }) => {
   const variants = {
@@ -24,9 +25,10 @@ const ButtonIconComponent = ({
     warning,
     large,
     small,
+    light,
   }
 
-  const iconColor = useTheme('colors.icon_inverse', { ignoreTheme: true })
+  const iconColor = useTheme(light ? 'colors.icon' : 'colors.icon_inverse', { ignoreTheme: true })
 
   return (
     <Base {...variants} {...props} disabled={loading || disabled} circle>
@@ -43,7 +45,7 @@ const ButtonIconComponent = ({
 }
 
 ButtonIconComponent.propTypes = {
-  Icon: PropTypes.node,
+  Icon: PropTypes.elementType,
   loading: PropTypes.bool,
   disabled: PropTypes.bool,
   large: PropTypes.bool,
@@ -52,6 +54,9 @@ ButtonIconComponent.propTypes = {
   info: PropTypes.bool,
   warning: PropTypes.bool,
   success: PropTypes.bool,
+  light: PropTypes.bool,
+
+
 }
 
 export default ButtonIconComponent

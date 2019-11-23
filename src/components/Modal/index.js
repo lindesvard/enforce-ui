@@ -1,15 +1,9 @@
 import React, { useEffect, useRef } from 'react'
-import { createPortal } from 'react-dom'
+import { createPortal } from 'react-dom'
 import PropTypes from 'prop-types'
 import { FiX } from 'react-icons/fi'
 import { disableScroll, enableScroll } from '../../lib/scroll'
-import {
-  Base,
-  Modal,
-  Header,
-  Body,
-  CloseDesktop,
-} from './styled'
+import { Base, Modal, Header, Body, CloseDesktop } from './styled'
 import { ButtonIcon } from '../Button'
 import { Heading } from '../Typography'
 
@@ -28,10 +22,11 @@ const ModalComponent = ({
   const root = document.body
 
   useEffect(() => {
-    root.appendChild(el.current)
+    const element = el.current
+    root.appendChild(element)
 
     return () => {
-      root.removeChild(el.current)
+      root.removeChild(element)
     }
   }, [el, root])
 
@@ -49,7 +44,7 @@ const ModalComponent = ({
       return () => {}
     }
 
-    const handleEsc = (event) => {
+    const handleEsc = event => {
       if (event.keyCode === 27 && closeOnEsc) {
         if (confirmOnClose && !confirm(confirmText)) {
           return
@@ -63,24 +58,28 @@ const ModalComponent = ({
     return () => {
       document.removeEventListener('keydown', handleEsc)
     }
-  }, [closeOnEsc, confirmOnClose, show, confirmText])
+  }, [closeOnEsc, confirmOnClose, show, confirmText, onClose])
 
-  return show && el.current && createPortal(
-    <Base>
-      <CloseDesktop>
-        <ButtonIcon large Icon={FiX} onClick={onClose} />
-      </CloseDesktop>
-      <Modal>
-        <Header>
-          <Heading>{title}</Heading>
-          {renderComplete && renderComplete()}
-        </Header>
-        <Body padding={padding} data-scroll-lock-scrollable>
-          {children}
-        </Body>
-      </Modal>
-    </Base>,
-    el.current,
+  return (
+    show &&
+    el.current &&
+    createPortal(
+      <Base>
+        <CloseDesktop>
+          <ButtonIcon large Icon={FiX} onClick={onClose} />
+        </CloseDesktop>
+        <Modal>
+          <Header>
+            <Heading>{title}</Heading>
+            {renderComplete && renderComplete()}
+          </Header>
+          <Body padding={padding} data-scroll-lock-scrollable>
+            {children}
+          </Body>
+        </Modal>
+      </Base>,
+      el.current
+    )
   )
 }
 

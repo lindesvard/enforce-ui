@@ -14,26 +14,22 @@ export const Default = () => {
 
 export const SeveralInline = () => {
   const { checkbox } = useForm({ tos: true })
-  return [
-    <Checkbox {...checkbox('tos')} label="Do you agree with our terms?" />,
-    <Checkbox {...checkbox('tos')} label="Do you agree with our terms?" />,
-  ]
+  return (
+    <>
+      <Checkbox {...checkbox('tos')} label="Do you agree with our terms?" />
+      <Checkbox {...checkbox('tos')} label="Do you agree with our terms?" />
+    </>
+  )
 }
 
 export const SeveralBlock = () => {
   const { checkbox } = useForm({ tos: true })
-  return [
-    <Checkbox
-      {...checkbox('tos')}
-      block
-      label="Do you agree with our terms?"
-    />,
-    <Checkbox
-      {...checkbox('tos')}
-      block
-      label="Do you agree with our terms?"
-    />,
-  ]
+  return (
+    <>
+      <Checkbox {...checkbox('tos')} block label="Do you agree with our terms?" />
+      <Checkbox {...checkbox('tos')} block label="Do you agree with our terms?" />
+    </>
+  )
 }
 
 export const WithLabel = () => {
@@ -41,11 +37,7 @@ export const WithLabel = () => {
   return (
     <>
       <Label>What candy do you like?</Label>
-      <Checkbox
-        {...checkbox('tos')}
-        block
-        label="Do you agree with our terms?"
-      />
+      <Checkbox {...checkbox('tos')} block label="Do you agree with our terms?" />
     </>
   )
 }

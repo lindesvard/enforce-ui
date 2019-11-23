@@ -2,12 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Base } from './styled'
 
-const RotateComponent = ({
-  children,
-  deg,
-  origin,
-  ...props
-}) => (
+const RotateComponent = ({ children, deg, origin, ...props }) => (
   <Base {...props} deg={deg} origin={origin}>
     {children}
   </Base>

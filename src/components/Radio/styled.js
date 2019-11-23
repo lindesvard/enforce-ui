@@ -3,11 +3,11 @@ import { values } from '../../lib/mixins'
 import { Text } from '../Typography'
 
 export const RadioContainer = styled.label`
-  display: ${(props) => (props.block ? 'flex' : 'inline-flex')};
+  display: ${props => (props.block ? 'flex' : 'inline-flex')};
   align-items: center;
   flex-direction: row;
   cursor: pointer;
-  margin: ${(props) => (props.block ? '0 0 10px' : '0 20px 10px 0')};
+  margin: ${props => (props.block ? '0 0 10px' : '0 20px 10px 0')};
 `
 
 export const Icon = styled.svg`
@@ -46,7 +46,7 @@ export const StyledRadio = styled.div`
   }
 
   ${Icon} {
-    visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
+    visibility: ${props => (props.checked ? 'visible' : 'hidden')};
   }
 `
 

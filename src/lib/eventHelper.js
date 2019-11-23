@@ -1,1 +1,1 @@
-export const domOnChangeEvent = (value) => ({ target: { value } })
+export const domOnChangeEvent = value => ({ target: { value } })

@@ -6,7 +6,7 @@ export const Base = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
 
   display: flex;
   justify-content: center;
@@ -29,7 +29,7 @@ export const Modal = styled.div`
   border-radius: 4px;
   background: rgb(250, 250, 250);
   overflow: hidden;
-  margin-right: ${(props) => props.offset}px;
+  margin-right: ${props => props.offset}px;
 `
 
 export const Header = styled.div`
@@ -47,7 +47,7 @@ export const Header = styled.div`
 `
 
 export const Body = styled.div`
-  padding: ${(props) => (props.padding || 0)}px;
+  padding: ${props => props.padding || 0}px;
 `
 
 export const CloseDesktop = styled.div`

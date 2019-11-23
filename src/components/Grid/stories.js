@@ -6,7 +6,7 @@ export default {
   title: 'Grid',
 }
 
-const Box = (props) => <Flex width="100%" height="100px" borderRadius="3px" {...props} />
+const Box = props => <Flex width="100%" height="100px" borderRadius="3px" {...props} />
 
 export const Default = () => (
   <Grid.Container>

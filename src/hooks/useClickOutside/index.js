@@ -1,10 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-const useClickOutside = (
-  ref,
-  callback,
-  eventType = 'click',
-) => {
+const useClickOutside = (ref, callback, eventType = 'click') => {
   const handlerRef = useRef(callback)
 
   useEffect(() => {
@@ -12,7 +8,7 @@ const useClickOutside = (
   })
 
   useEffect(() => {
-    const listener = (event) => {
+    const listener = event => {
       if (ref && ref.current) {
         if (event.target.shadowRoot) {
           if (!event.target.shadowRoot.contains(ref.current)) {

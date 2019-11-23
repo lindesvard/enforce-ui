@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { values, theme } from '../../lib/mixins'
+import { values } from '../../lib/mixins'
 import { Text } from '../Typography'
 
 export const CheckboxContainer = styled.label`

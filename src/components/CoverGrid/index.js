@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Cover from '../Cover';
-import { Row, Column } from '../Structure';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Cover from '../Cover'
+import { Row, Column } from '../Structure'
 
-const CoverGridComponent = (props) => {
-  const { src } = props;
+const CoverGridComponent = props => {
+  const { src } = props
 
   return (
     <Row>
@@ -19,11 +19,11 @@ const CoverGridComponent = (props) => {
         </Row>
       </Column>
     </Row>
-  );
-};
+  )
+}
 
 CoverGridComponent.propTypes = {
   src: PropTypes.string.isRequired,
-};
+}
 
-export default CoverGridComponent;
+export default CoverGridComponent

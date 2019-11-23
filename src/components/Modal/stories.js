@@ -15,13 +15,17 @@ export const Default = () => {
   return (
     <Column p={5}>
       <Button onClick={handleShow}>Open modal</Button>
-      {[...new Array(150)].map(() => <Text>Super long content</Text>)}
+      {[...new Array(150)].map((_, index) => (
+        <Text key={index}>Super long content</Text>
+      ))}
       <Modal
         title="Create a chat"
         show={show}
         onClose={handleClose}
         renderComplete={() => (
-          <Button success onClick={handleClose}>Create</Button>
+          <Button success onClick={handleClose}>
+            Create
+          </Button>
         )}
       >
         <Text>This is a basic modal and the body scroll is disabled while this is open</Text>

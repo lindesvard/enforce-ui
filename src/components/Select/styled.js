@@ -3,12 +3,7 @@ import { values, theme } from '../../lib/mixins'
 
 export const Base = styled.div`
   border: 1px solid
-    ${values([
-    ['error', 'focus', 'error'],
-    ['error', 'error'],
-    ['focus', 'primary'],
-    'border',
-  ])};
+    ${values([['error', 'focus', 'error'], ['error', 'error'], ['focus', 'primary'], 'border'])};
   border-radius: 3px;
   height: 45px;
   position: relative;
@@ -46,15 +41,18 @@ export const DropDown = styled.div`
   border: 1px solid ${theme('colors.border')};
   border-radius: 3px;
   margin-top: 5px;
-  transition: transform .1s ease-in-out;
-  
-  ${(props) => (props.visible ? css`
-    visibility: visible;
-    transform: translate3d(0, 0, 0);
-  ` : css`
-    transform: translate3d(0, -10px, 0);
-    visibility: hidden;
-  `)}
+  transition: transform 0.1s ease-in-out;
+
+  ${props =>
+    props.visible
+      ? css`
+          visibility: visible;
+          transform: translate3d(0, 0, 0);
+        `
+      : css`
+          transform: translate3d(0, -10px, 0);
+          visibility: hidden;
+        `}
 
   top: 100%;
   left: -1px;
@@ -72,7 +70,7 @@ export const DropDownItem = styled.button`
   height: 42px;
   display: flex;
   align-items: center;
-  padding: ${(props) => (props.empty ? 0 : '0 10px')};
+  padding: ${props => (props.empty ? 0 : '0 10px')};
   width: 100%;
 
   &:last-child {

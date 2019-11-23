@@ -14,20 +14,56 @@ const props = {
 
 export const Default = () => <ButtonIcon {...props}>ButtonIcon</ButtonIcon>
 
-export const Warning = () => <ButtonIcon {...props} warning>ButtonIcon</ButtonIcon>
+export const Warning = () => (
+  <ButtonIcon {...props} warning>
+    ButtonIcon
+  </ButtonIcon>
+)
 
-export const Error = () => <ButtonIcon {...props} error>ButtonIcon</ButtonIcon>
+export const Error = () => (
+  <ButtonIcon {...props} error>
+    ButtonIcon
+  </ButtonIcon>
+)
 
-export const Success = () => <ButtonIcon {...props} success>ButtonIcon</ButtonIcon>
+export const Success = () => (
+  <ButtonIcon {...props} success>
+    ButtonIcon
+  </ButtonIcon>
+)
 
-export const Info = () => <ButtonIcon {...props} info>ButtonIcon</ButtonIcon>
+export const Info = () => (
+  <ButtonIcon {...props} info>
+    ButtonIcon
+  </ButtonIcon>
+)
 
-export const Light = () => <ButtonIcon {...props} light>ButtonIcon</ButtonIcon>
+export const Light = () => (
+  <ButtonIcon {...props} light>
+    ButtonIcon
+  </ButtonIcon>
+)
 
-export const Small = () => <ButtonIcon {...props} small>ButtonIcon</ButtonIcon>
+export const Small = () => (
+  <ButtonIcon {...props} small>
+    ButtonIcon
+  </ButtonIcon>
+)
 
-export const Large = () => <ButtonIcon {...props} large>ButtonIcon</ButtonIcon>
+export const Large = () => (
+  <ButtonIcon {...props} large>
+    ButtonIcon
+  </ButtonIcon>
+)
 
-export const Loading = () => <ButtonIcon {...props} loading>ButtonIcon</ButtonIcon>
+export const Loading = () => (
+  <ButtonIcon {...props} loading>
+    ButtonIcon
+  </ButtonIcon>
+)
 
-export const LoadingSuccess = () => <ButtonIcon {...props} success loading>ButtonIcon</ButtonIcon>
+export const LoadingSuccess = () => (
+  <ButtonIcon {...props} success loading>
+    ButtonIcon
+  </ButtonIcon>
+)

@@ -3,7 +3,7 @@ import { Row } from '../Structure'
 import { Text } from '../Typography'
 import Avatar from '../Avatar'
 
-const AuthorComponent = (props) => {
+const AuthorComponent = props => {
   const { name, image } = props
   return (
     <Row alignItems="center">

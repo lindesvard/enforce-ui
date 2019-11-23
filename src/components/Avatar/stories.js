@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Avatar from './'
 
 export default {
@@ -14,5 +14,7 @@ export const FallbackChar = () => {
 }
 
 export const FallbackName = () => {
-  return <Avatar src="https://avatarfiles.alphacoders.com/693/69306.jpgwq" fallback="Homer Simpson" />
+  return (
+    <Avatar src="https://avatarfiles.alphacoders.com/693/69306.jpgwq" fallback="Homer Simpson" />
+  )
 }

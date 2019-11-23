@@ -14,18 +14,22 @@ export const Default = () => {
 
 export const SeveralInline = () => {
   const { radio } = useForm({ cola: 'cola' })
-  return [
-    <Radio {...radio('drink', 'Cola')} />,
-    <Radio {...radio('drink', 'Pepsi')} />,
-  ]
+  return (
+    <>
+      <Radio {...radio('drink', 'Cola')} />
+      <Radio {...radio('drink', 'Pepsi')} />
+    </>
+  )
 }
 
 export const SeveralBlock = () => {
   const { radio } = useForm({ cola: 'cola' })
-  return [
-    <Radio {...radio('drink', 'Cola')} block />,
-    <Radio {...radio('drink', 'Pepsi')} block />,
-  ]
+  return (
+    <>
+      <Radio {...radio('drink', 'Cola')} block />
+      <Radio {...radio('drink', 'Pepsi')} block />
+    </>
+  )
 }
 
 export const WithLabel = () => {

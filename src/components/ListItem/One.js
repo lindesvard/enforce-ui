@@ -6,10 +6,8 @@ import { Text } from '../Typography'
 import { Row, Column } from '../Structure'
 import { Base } from './styled'
 
-const ListItem = (props) => {
-  const {
-    image, title, description, author, RightIcon,
-  } = props
+const ListItem = props => {
+  const { image, title, description, author, RightIcon } = props
 
   const showDescription = Boolean(description || author)
 
@@ -30,9 +28,7 @@ const ListItem = (props) => {
         )}
       </Column>
 
-      <Column>
-        {Boolean(RightIcon) && <RightIcon />}
-      </Column>
+      <Column>{Boolean(RightIcon) && <RightIcon />}</Column>
     </Base>
   )
 }

@@ -34,19 +34,33 @@ export const WithError = () => {
 }
 
 export const WithAdvanced = () => {
-  const { field, setFieldValue, values: { options } } = useForm({ name: '', options: [] })
+  const {
+    field,
+    setFieldValue,
+    values: { options },
+  } = useForm({ name: '', options: [] })
 
-  const handleSearch = useCallback(debounce(async (query) => {
-    const url = `https://jsonplaceholder.typicode.com/users?q=${query}`
+  const handleSearch = useCallback(
+    debounce(async query => {
+      const url = `https://jsonplaceholder.typicode.com/users?q=${query}`
 
-    const response = await fetch(url)
-    const body = await response.json()
-    setFieldValue('options', body)
-  }, 100), [])
+      const response = await fetch(url)
+      const body = await response.json()
+      setFieldValue('options', body)
+    }, 100),
+    []
+  )
 
   return (
     <div>
-      <Select label="Your first name" error="Some error" advanced onSearch={handleSearch} options={options.map(({ id, username }) => ({ id, label: username }))} {...field('name')} />
+      <Select
+        label="Your first name"
+        error="Some error"
+        advanced
+        onSearch={handleSearch}
+        options={options.map(({ id, username }) => ({ id, label: username }))}
+        {...field('name')}
+      />
     </div>
   )
 }

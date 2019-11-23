@@ -1,7 +1,7 @@
 import React from 'react'
 import { Base, Line } from './styled'
 
-const SeperatorComponent = (props) => (
+const SeperatorComponent = props => (
   <Base {...props}>
     <Line />
   </Base>

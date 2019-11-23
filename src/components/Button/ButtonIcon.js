@@ -37,9 +37,7 @@ const ButtonIconComponent = ({
           <Loading white ignoreTheme />
         </Overlay>
       )}
-      {Boolean(Icon) && (
-        <Icon color={iconColor} />
-      )}
+      {Boolean(Icon) && <Icon color={iconColor} />}
     </Base>
   )
 }
@@ -55,8 +53,6 @@ ButtonIconComponent.propTypes = {
   warning: PropTypes.bool,
   success: PropTypes.bool,
   light: PropTypes.bool,
-
-
 }
 
 export default ButtonIconComponent

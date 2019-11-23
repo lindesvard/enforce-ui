@@ -1,11 +1,7 @@
-import React, {
-  useEffect, useState, useRef,
-} from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { FiChevronDown } from 'react-icons/fi'
-import {
-  Base, Select, SelectedValue, DropDown, DropDownItem,
-} from './styled'
+import { Base, Select, SelectedValue, DropDown, DropDownItem } from './styled'
 import useFocus from '../../hooks/useFocus'
 import useForm from '../../hooks/useForm'
 import useClickOutside from '../../hooks/useClickOutside'
@@ -25,10 +21,11 @@ const SelectComponent = ({
 }) => {
   const base = useRef()
   const [loading, setLoading] = useState(false)
-  const { field, values: { search } } = useForm({ search: '' })
   const {
-    focus, onFocus, onBlur,
-  } = useFocus(props)
+    field,
+    values: { search },
+  } = useForm({ search: '' })
+  const { focus, onFocus, onBlur } = useFocus(props)
 
   useEffect(() => {
     if (onSearch) {
@@ -37,7 +34,7 @@ const SelectComponent = ({
         setLoading(false)
       })
     }
-  }, [search])
+  }, [onSearch, search])
 
   useEffect(onBlur, [value])
 
@@ -48,19 +45,26 @@ const SelectComponent = ({
       {advanced ? (
         <>
           <SelectedValue>
-            {getProperty('label', options.find((option) => getProperty('id', option) === value))}
+            {getProperty(
+              'label',
+              options.find(option => getProperty('id', option) === value)
+            )}
           </SelectedValue>
           <DropDown visible={focus}>
             <DropDownItem empty>
-              <Input border={false} placeholder="Search your stuff" {...field('search')} loading={loading} />
+              <Input
+                border={false}
+                placeholder="Search your stuff"
+                {...field('search')}
+                loading={loading}
+              />
             </DropDownItem>
-            {options.length === 0 && (
-            <DropDownItem>
-              No result
-            </DropDownItem>
-            )}
-            {options.map((option) => (
-              <DropDownItem key={getProperty('id', option)} onClick={() => onChange(domOnChangeEvent(getProperty('id', option)))}>
+            {options.length === 0 && <DropDownItem>No result</DropDownItem>}
+            {options.map(option => (
+              <DropDownItem
+                key={getProperty('id', option)}
+                onClick={() => onChange(domOnChangeEvent(getProperty('id', option)))}
+              >
                 {getProperty('label', option)}
               </DropDownItem>
             ))}
@@ -68,7 +72,7 @@ const SelectComponent = ({
         </>
       ) : (
         <Select {...props} onFocus={onFocus} onBlur={onBlur}>
-          {options.map((option) => (
+          {options.map(option => (
             <option value={getProperty('id', option)} key={getProperty('id', option)}>
               {getProperty('label', option)}
             </option>

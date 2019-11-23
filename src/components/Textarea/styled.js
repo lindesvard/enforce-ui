@@ -4,12 +4,7 @@ import { values, theme } from '../../lib/mixins'
 
 export const Base = styled.div`
   border: 1px solid
-    ${values([
-    ['error', 'focus', 'error'],
-    ['error', 'error'],
-    ['focus', 'primary'],
-    'border',
-  ])};
+    ${values([['error', 'focus', 'error'], ['error', 'error'], ['focus', 'primary'], 'border'])};
   border-radius: 3px;
   min-height: 45px;
   position: relative;
@@ -40,11 +35,7 @@ export const Label = styled.label`
   position: absolute;
   top: 11px;
   transform-origin: left;
-  transform: translate3d(
-    0,
-    ${({ focus, active }) => (focus || active ? '-6px' : 0)},
-    0
-  );
+  transform: translate3d(0, ${({ focus, active }) => (focus || active ? '-6px' : 0)}, 0);
   font-size: ${({ focus, active }) => (focus || active ? '10px' : '15px')};
   transition: all 0.2s ease-in-out;
   color: ${values([

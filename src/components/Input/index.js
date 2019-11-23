@@ -7,22 +7,20 @@ import useTheme from '../../hooks/useTheme'
 import { Column } from '../Structure'
 import Spin from '../Spin'
 
-const InputComponent = (props) => {
+const InputComponent = props => {
   const input = useRef()
   const iconColor = useTheme('colors.icon')
-  const {
-    label,
-    error,
-    border = true,
-    loading = false,
-    Icon,
-  } = props
-  const {
-    focus, active, onFocus, onBlur,
-  } = useFocus(props)
+  const { label, error, border = true, loading = false, Icon } = props
+  const { focus, active, onFocus, onBlur } = useFocus(props)
 
   return (
-    <Base active={active} focus={focus} error={error} border={border} onClick={() => input.current.focus()}>
+    <Base
+      active={active}
+      focus={focus}
+      error={error}
+      border={border}
+      onClick={() => input.current.focus()}
+    >
       {Icon && <Icon color={iconColor} />}
       <Column flex={1} pl={Icon && '10px'} pr={loading && '10px'}>
         {label && (
@@ -40,7 +38,11 @@ const InputComponent = (props) => {
           ref={input}
         />
       </Column>
-      {loading && <Spin><FiLoader color={iconColor} /></Spin>}
+      {loading && (
+        <Spin>
+          <FiLoader color={iconColor} />
+        </Spin>
+      )}
     </Base>
   )
 }

@@ -5,9 +5,9 @@ import { theme } from '../../lib/mixins'
 export const Base = styled(Column)`
   ${theme('css.borderRadius.large')};
   padding: 5px;
-  transition: background .2s ease-in-out;
-  
+  transition: background 0.2s ease-in-out;
+
   &:hover {
-    background: ${theme('colors.grey_5')}
+    background: ${theme('colors.grey_5')};
   }
 `

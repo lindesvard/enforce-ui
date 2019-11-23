@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Base, Fallback } from './styled'
 import { Text } from '../Typography'
 
-const getInitials = (string) => {
+const getInitials = string => {
   if (string.length <= 2) {
     return string.toUpperCase()
   }
@@ -17,21 +17,21 @@ const getInitials = (string) => {
   return initials
 }
 
-const AvatarComponent = (props) => {
+const AvatarComponent = props => {
   const { fallback, src, size } = props
   const [noImage, setNoImage] = useState(!src)
 
   if (noImage) {
     return (
       <Fallback {...props}>
-        <Text white ignoreTheme size={size / 2}>{getInitials(fallback)}</Text>
+        <Text white ignoreTheme size={size / 2}>
+          {getInitials(fallback)}
+        </Text>
       </Fallback>
     )
   }
 
-  return (
-    <Base {...props} onError={() => setNoImage(true)} />
-  )
+  return <Base {...props} onError={() => setNoImage(true)} />
 }
 
 AvatarComponent.propTypes = {}

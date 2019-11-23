@@ -7,12 +7,7 @@ import { Heading, Text } from '../Typography'
 import Author from '../Author'
 import { Column } from '../Structure'
 
-const BlockItem = ({
-  image,
-  title,
-  description,
-  author,
-}) => {
+const BlockItem = ({ image, title, description, author }) => {
   const showDescription = Boolean(description || author)
 
   return (

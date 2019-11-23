@@ -7,9 +7,7 @@ import { theme } from '../../lib/mixins'
 // - Heading (18, 22, 24)
 // - Text (10, 12, 14, 16, 18)
 
-const getSize = (sizes) => ({
-  xsmall, small, large, xlarge, size,
-}) => {
+const getSize = sizes => ({ xsmall, small, large, xlarge, size }) => {
   if (size) {
     return size
   }
@@ -33,11 +31,15 @@ const getSize = (sizes) => ({
   return sizes.default
 }
 
-const getFontSize = (type) => (props) => {
+const getFontSize = type => props => {
   switch (type) {
     case 'text': {
       const fontSize = getSize({
-        xsmall: 10, small: 12, default: 14, large: 16, xlarge: 18,
+        xsmall: 10,
+        small: 12,
+        default: 14,
+        large: 16,
+        xlarge: 18,
       })(props)
       return css`
         font-size: ${fontSize}px;
@@ -46,7 +48,10 @@ const getFontSize = (type) => (props) => {
     }
     case 'heading': {
       const fontSize = getSize({
-        xsmall: 16, small: 18, default: 22, large: 24,
+        xsmall: 16,
+        small: 18,
+        default: 22,
+        large: 24,
       })(props)
       return css`
         font-size: ${fontSize}px;
@@ -81,9 +86,7 @@ const getFontWeight = ({ bold, medium, thin }) => {
   return 400
 }
 
-const getColor = ({
-  meta, light, color, white, ...props
-}) => {
+const getColor = ({ meta, light, color, white, ...props }) => {
   if (color) {
     return color
   }
@@ -99,22 +102,25 @@ const getColor = ({
   return theme('colors.text')(props)
 }
 
-
 export const Text = styled.p`
   ${theme('css.font')};
   ${getFontSize('text')};
   font-weight: ${getFontWeight};
   color: ${getColor};
-  margin: ${(props) => (props.paragraph ? '5px' : 0)} 0;
+  margin: ${props => (props.paragraph ? '5px' : 0)} 0;
   ${space};
 `
 
-export const Heading = styled((props) => <Text {...props} thin={false} medium={false} bold paragraph={false} />)`
+export const Heading = styled(props => (
+  <Text {...props} thin={false} medium={false} bold paragraph={false} />
+))`
   ${getFontSize('heading')};
   color: ${theme('colors.text_title')};
 `
 
-export const Display = styled((props) => <Text {...props} thin={false} medium={false} bold paragraph={false} />)`
+export const Display = styled(props => (
+  <Text {...props} thin={false} medium={false} bold paragraph={false} />
+))`
   ${getFontSize('display')};
   color: ${theme('colors.text_title')};
 `

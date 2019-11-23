@@ -6,13 +6,7 @@ import { Heading, Text } from '../Typography'
 import Author from '../Author'
 import { Column, Row } from '../Structure'
 
-const Card = ({
-  image,
-  title,
-  description,
-  author,
-  date,
-}) => {
+const Card = ({ image, title, description, author, date }) => {
   const showDescription = Boolean(description || author)
 
   return (
@@ -22,7 +16,11 @@ const Card = ({
       </Column>
       <Column px={3} py={3}>
         <Heading xsmall>{title}</Heading>
-        {description && <Text light mt={1}>{description}</Text>}
+        {description && (
+          <Text light mt={1}>
+            {description}
+          </Text>
+        )}
         {showDescription && (
           <Row mt={4} alignItems="center" justifyContent="space-between">
             {author && <Author {...author} />}

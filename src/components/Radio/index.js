@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  RadioContainer, HiddenRadio, StyledRadio, Icon, Title,
-} from './styled'
+import { RadioContainer, HiddenRadio, StyledRadio, Icon, Title } from './styled'
 
 const RadioComponent = ({ label, checked, ...props }) => (
   <RadioContainer {...props}>

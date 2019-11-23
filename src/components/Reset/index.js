@@ -9,7 +9,7 @@ const Reset = createGlobalStyle`
   }
 
   body {
-    background: ${(props) => props.background};
+    background: ${props => props.background};
     ${theme('css.font')};
   }
 `

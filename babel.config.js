@@ -1,4 +1,4 @@
-module.exports = function (api) {
+module.exports = function(api) {
   api.cache(true)
 
   const modules = process.env.BABEL_ENV === 'es6' ? false : 'commonjs'
@@ -14,8 +14,6 @@ module.exports = function (api) {
       ],
       '@babel/preset-react',
     ],
-    plugins: [
-      ['styled-components', { ssr: true }],
-    ],
+    plugins: [['styled-components', { ssr: true }]],
   }
 }

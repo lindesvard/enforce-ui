@@ -8,9 +8,7 @@ const iconStyles = { style: { verticalAlign: 'middle' }, className: 'icon' }
 
 const ProviderComponent = ({ children, mode = 'light' }) => (
   <ThemeProvider theme={{ mode, ...defaultTheme }}>
-    <IconContext.Provider value={iconStyles}>
-      {children}
-    </IconContext.Provider>
+    <IconContext.Provider value={iconStyles}>{children}</IconContext.Provider>
   </ThemeProvider>
 )
 

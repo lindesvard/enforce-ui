@@ -28,9 +28,8 @@ export default {
   },
   css: {
     font: css`
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-        'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-        'Helvetica Neue', sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
       font-size: 15px;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
@@ -49,7 +48,7 @@ export default {
       justify-content: center;
     `,
     boxShadow: css`
-      box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+      box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
     `,
     borderRadius: {
       small: css`

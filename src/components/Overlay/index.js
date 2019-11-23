@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
-import { Base } from './styled';
+import React from 'react'
+import { Base } from './styled'
 
-const SpacerComponent = (props) => {
+const SpacerComponent = props => {
   return <Base {...props} />
-};
+}
 
 SpacerComponent.propTypes = {}
 

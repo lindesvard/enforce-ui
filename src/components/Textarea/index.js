@@ -4,9 +4,7 @@ import { Base, Label, Input } from './styled'
 import useFocus from '../../hooks/useFocus'
 
 const TextareaComponent = ({ label, error, ...props }) => {
-  const {
-    focus, active, onFocus, onBlur,
-  } = useFocus(props)
+  const { focus, active, onFocus, onBlur } = useFocus(props)
 
   return (
     <Base active={active} focus={focus} error={error}>

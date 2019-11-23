@@ -9,11 +9,19 @@ export default {
 
 export const _Text = () => (
   <Column>
-    <Text thin xsmall>This is xsmall Text</Text>
-    <Text thin small>This is small Text</Text>
+    <Text thin xsmall>
+      This is xsmall Text
+    </Text>
+    <Text thin small>
+      This is small Text
+    </Text>
     <Text thin>This is normal Text</Text>
-    <Text thin large>This is large Text</Text>
-    <Text thin xlarge>This is xlarge Text</Text>
+    <Text thin large>
+      This is large Text
+    </Text>
+    <Text thin xlarge>
+      This is xlarge Text
+    </Text>
     <Spacer />
     <Text xsmall>This is xsmall Text</Text>
     <Text small>This is small Text</Text>
@@ -21,27 +29,51 @@ export const _Text = () => (
     <Text large>This is large Text</Text>
     <Text xlarge>This is xlarge Text</Text>
     <Spacer />
-    <Text medium xsmall>This is xsmall Text</Text>
-    <Text medium small>This is small Text</Text>
+    <Text medium xsmall>
+      This is xsmall Text
+    </Text>
+    <Text medium small>
+      This is small Text
+    </Text>
     <Text medium>This is normal Text</Text>
-    <Text medium large>This is large Text</Text>
-    <Text medium xlarge>This is xlarge Text</Text>
+    <Text medium large>
+      This is large Text
+    </Text>
+    <Text medium xlarge>
+      This is xlarge Text
+    </Text>
     <Spacer />
-    <Text bold xsmall>This is xsmall Text</Text>
-    <Text bold small>This is small Text</Text>
+    <Text bold xsmall>
+      This is xsmall Text
+    </Text>
+    <Text bold small>
+      This is small Text
+    </Text>
     <Text bold>This is normal Text</Text>
-    <Text bold large>This is large Text</Text>
-    <Text bold xlarge>This is xlarge Text</Text>
+    <Text bold large>
+      This is large Text
+    </Text>
+    <Text bold xlarge>
+      This is xlarge Text
+    </Text>
   </Column>
 )
 
 export const _TextAsParagraph = () => (
   <Column>
-    <Text paragraph xsmall>This is xsmall Text</Text>
-    <Text paragraph small>This is small Text</Text>
+    <Text paragraph xsmall>
+      This is xsmall Text
+    </Text>
+    <Text paragraph small>
+      This is small Text
+    </Text>
     <Text paragraph>This is normal Text</Text>
-    <Text paragraph large>This is large Text</Text>
-    <Text paragraph xlarge>This is xlarge Text</Text>
+    <Text paragraph large>
+      This is large Text
+    </Text>
+    <Text paragraph xlarge>
+      This is xlarge Text
+    </Text>
   </Column>
 )
 

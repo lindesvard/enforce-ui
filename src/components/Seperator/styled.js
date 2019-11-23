@@ -14,7 +14,7 @@ const getSize = ({ small, large }) => {
 }
 
 export const Base = styled.div`
-  padding: ${getSize}px ${(props) => props.mr || 0}px ${getSize}px ${(props) => props.ml || 0}px;
+  padding: ${getSize}px ${props => props.mr || 0}px ${getSize}px ${props => props.ml || 0}px;
   width: 100%;
 `
 

@@ -1,7 +1,5 @@
 import { useReducer } from 'react'
-import {
-  assocPath, path, pathOr, length, pipe, is, curry,
-} from 'rambda'
+import { assocPath, path, pathOr, length, pipe, is, curry } from 'rambda'
 
 const isInt = is(Number)
 
@@ -16,10 +14,7 @@ const reducer = (state, action) => {
 
   switch (type) {
     case 'change':
-      return pipe(
-        assocPath(payload.key, payload.value),
-        assocPath('title', payload.value),
-      )(state)
+      return pipe(assocPath(payload.key, payload.value), assocPath('title', payload.value))(state)
     case 'add':
       return assocPath(
         payload.key,
@@ -31,7 +26,7 @@ const reducer = (state, action) => {
               .substring(5),
           },
         ],
-        state,
+        state
       )
     case 'remove': {
       const oldArray = path(payload.key, state)
@@ -51,24 +46,25 @@ export default function useForm(values) {
 
   const [state, _dispatch] = useReducer(reducer, initialState)
 
-  const dispatch = (type, payload) => _dispatch({
-    type,
-    payload,
-  })
+  const dispatch = (type, payload) =>
+    _dispatch({
+      type,
+      payload,
+    })
 
-  const getKey = (key) => `values.${key}`
+  const getKey = key => `values.${key}`
 
   const change = (key, value) => dispatch('change', { key: getKey(key), value })
 
-  const getValue = (key) => path(getKey(key), state)
+  const getValue = key => path(getKey(key), state)
 
-  const field = (key) => ({
-    onChange: (event) => change(key, event.target.value),
+  const field = key => ({
+    onChange: event => change(key, event.target.value),
     value: getValue(key),
   })
 
-  const checkbox = (key) => ({
-    onChange: (event) => change(key, event.target.checked),
+  const checkbox = key => ({
+    onChange: event => change(key, event.target.checked),
     checked: getValue(key),
   })
 
@@ -78,11 +74,12 @@ export default function useForm(values) {
     label: value,
   })
 
-  const array = (key, render) => render({
-    add: () => dispatch('add', { key: getKey(key) }),
-    remove: (index) => dispatch('remove', { key: getKey(key), index }),
-    items: getValue(key),
-  })
+  const array = (key, render) =>
+    render({
+      add: () => dispatch('add', { key: getKey(key) }),
+      remove: index => dispatch('remove', { key: getKey(key), index }),
+      items: getValue(key),
+    })
 
   const setFieldValue = curry((key, event) => {
     const value = pathOr(event, ['target', 'value'], event)
@@ -90,6 +87,11 @@ export default function useForm(values) {
   })
 
   return {
-    field, array, checkbox, radio, setFieldValue, ...state,
+    field,
+    array,
+    checkbox,
+    radio,
+    setFieldValue,
+    ...state,
   }
 }

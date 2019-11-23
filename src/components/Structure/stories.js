@@ -23,4 +23,6 @@ export const _Column = () => (
   </Column>
 )
 
-export const _Flex = () => <Flex width="100px" height="100px" bg="#f4f4f4" borderRadius="3px" m="10px" />
+export const _Flex = () => (
+  <Flex width="100px" height="100px" bg="#f4f4f4" borderRadius="3px" m="10px" />
+)

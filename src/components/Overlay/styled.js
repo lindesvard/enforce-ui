@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-import {theme} from '../../lib/mixins';
+import styled from 'styled-components'
 
 export const Base = styled.div`
   position: absolute;
@@ -7,7 +6,7 @@ export const Base = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  background: ${props => props.background || 'rgba(0, 0, 0, .5)'};
+  background: ${props => props.background || 'rgba(0, 0, 0, .5)'};
   display: flex;
   align-items: center;
   justify-content: center;

@@ -18,6 +18,7 @@
     "rambda": "^4.1.0",
     "react-icons": "3.6.0",
     "react-textarea-autosize": "^7.1.2",
+    "scroll-lock": "^2.1.2",
     "styled-components": "^5.0.0-rc.2",
     "styled-system": "^5.1.2",
     "tinycolor2": "^1.4.1",
